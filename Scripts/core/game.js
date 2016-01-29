@@ -4,6 +4,7 @@ var canvas;
 var stage;
 var helloLabel;
 function init() {
+    //canvas
     canvas = document.getElementById("canvas");
     stage = new createjs.Stage(canvas);
     createjs.Ticker.setFPS(60); //set the framerate to 60 frames per second
