@@ -10,7 +10,7 @@ module scenes {
             super();
         }
         
-        // public methods++++++++++++++++++++++++
+        // Public methods++++++++++++++++++++++++
         //start method ---- overwrite
         public start(): void {
             console.log("Game Started...");
@@ -21,10 +21,10 @@ module scenes {
             this._helloLabel.x = config.Screen.CENTER_X;
             this._helloLabel.y = config.Screen.CENTER_Y;
 
-            this.addChild(this._helloLabel); //this---- scene object
+            this.addChild(this._helloLabel); //this ---- scene object
            
             this._startButton = new objects.Button("StartButton",
-                config.Screen.CENTER_X, config.Screen.CENTER_Y + 60)
+                config.Screen.CENTER_X, config.Screen.CENTER_Y + 60)   
 
             this.addChild(this._startButton);
             

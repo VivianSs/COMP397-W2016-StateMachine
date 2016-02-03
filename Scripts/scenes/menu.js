@@ -12,7 +12,7 @@ var scenes;
         function Menu() {
             _super.call(this);
         }
-        // public methods++++++++++++++++++++++++
+        // Public methods++++++++++++++++++++++++
         //start method ---- overwrite
         Menu.prototype.start = function () {
             console.log("Game Started...");
@@ -21,8 +21,8 @@ var scenes;
             this._helloLabel.regY = this._helloLabel.getMeasuredHeight() * 0.5;
             this._helloLabel.x = config.Screen.CENTER_X;
             this._helloLabel.y = config.Screen.CENTER_Y;
-            this.addChild(this._helloLabel); //this---- scene object
-            this._startButton = new objects.Button("StartButon", config.Screen.CENTER_X, config.Screen.CENTER_Y + 60);
+            this.addChild(this._helloLabel); //this ---- scene object
+            this._startButton = new objects.Button("StartButton", config.Screen.CENTER_X, config.Screen.CENTER_Y + 60);
             this.addChild(this._startButton);
             //startbutton event listener
             this._startButton.on("click", this._startButtonClick, this);
