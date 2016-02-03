@@ -5,12 +5,13 @@ import CScreen = config.Screen;
 
 // global variables
 var canvas: HTMLElement;
-var stage:createjs.Stage;
+var stage: createjs.Stage;
 
-var helloLabel:createjs.Text;
+var menu: scenes.Menu;
 
-function init():void {
-    //crebbate a reference the HTML canvas Element
+
+function init(): void {
+    //create a reference the HTML canvas Element
     canvas = document.getElementById("canvas");
     
     //create our main display list container
@@ -22,26 +23,18 @@ function init():void {
     //create an event listener to count off frames
     createjs.Ticker.on("tick", gameLoop, this);
     main();
-    
+
 }
 
 // main game loop function that handles what happens each "tick" or frame
-function gameLoop(event: createjs.Event):void {
-    helloLabel.rotation += 5;
+function gameLoop(event: createjs.Event): void {
+    menu.update();
     stage.update();
 }
 
 //this function is executed one time
 function main() {
-    console.log("Game Started...");
-    
-    helloLabel = new createjs.Text("Hello World!", "60px Consolas", "#000000");
-    helloLabel.regX = helloLabel.getMeasuredWidth() * 0.5;
-    helloLabel.regY = helloLabel.getMeasuredHeight() * 0.5;
-    helloLabel.x = config.Screen.CENTER_X;
-    helloLabel.y = config.Screen.CENTER_Y;
-    
-    stage.addChild(helloLabel);
+    menu = new scenes.Menu();
 }
 
 
